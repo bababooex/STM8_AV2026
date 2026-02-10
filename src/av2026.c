@@ -86,11 +86,11 @@ void AV2026_setFrequency(float frec, uint32_t bb_sym)
     if (fracN > 0xFF) fracN = 0xFF;
 
     reg[0] = fracN & 0xFF;
-		//handle too large number with two 32 bit uints
-		p1 = freq_khz / AV2026_XTAL;
-		p2 = freq_khz % AV2026_XTAL;
+	//handle too large number with two 32 bit uints
+	p1 = freq_khz / AV2026_XTAL;
+	p2 = freq_khz % AV2026_XTAL;
 
-		fracN = (p1 << 17) + ((p2 << 17) / AV2026_XTAL);
+	fracN = (p1 << 17) + ((p2 << 17) / AV2026_XTAL);
     fracN = fracN & 0x1FFFF;
 		
     reg[1] = ((fracN >> 9) & 0xFF);
@@ -128,4 +128,5 @@ void AV2026_setFrequency(float frec, uint32_t bb_sym)
         AV2026_write_regs(12, reg + 12, 1);
     }
 }
+
 
