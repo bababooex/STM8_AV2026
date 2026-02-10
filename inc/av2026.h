@@ -2,7 +2,7 @@
 #define AV2026_H
 
 #include "swi2c.h"
-#include "stm8s_delay.h"
+#include "stm8s_delay.h" //ideally precise delay
 // AV2026 default address and xtal frequency in kHz
 #define AV2026_ADDR   (0x60 << 1)
 #define AV2026_XTAL   27000
@@ -32,6 +32,7 @@ static const uint8_t initRegs[] = {
 
 void AV2026_write_regs(uint8_t regAddr, uint8_t* data, uint8_t length);
 void AV2026_setFrequency(float frec, uint32_t bb_sym);
+
 
 
 #endif //AV2026_H
