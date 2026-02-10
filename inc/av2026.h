@@ -6,8 +6,8 @@
 // AV2026 default address and xtal frequency in kHz
 #define AV2026_ADDR   (0x60 << 1)
 #define AV2026_XTAL   27000
-// offset tuner to get IQ output as IF for easy work
-#define FREQ_OFFSET 44
+// offset tuner to get IQ output as IF for easy work, set to 44 to match my tv tuner lowest receiving point
+#define FREQ_OFFSET 44 
 // very high bandwidth to avoid filtering issue at IF (doesnt matter, pushing BW to its limits)
 #define AV2026_tune(frec) AV2026_setFrequency(frec, 100000)
 //init registers for sat tuner - total 42
@@ -36,3 +36,4 @@ void AV2026_setFrequency(float frec, uint32_t bb_sym);
 
 
 #endif //AV2026_H
+
