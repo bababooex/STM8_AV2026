@@ -16,11 +16,11 @@ void AV2026_write_regs(uint8_t regAddr, uint8_t* data, uint8_t length)
 void AV2026_setFrequency(float frec, uint32_t bb_sym)
 {
     static uint8_t tuner_initial = 0;
-		uint8_t i;
-		uint32_t p1;
-		uint32_t p2;
+	uint8_t i;
+	uint32_t p1;
+	uint32_t p2;
 		
-		uint32_t freq_khz;
+	uint32_t freq_khz;
     uint8_t reg[50];
     uint8_t reg_start;
     uint32_t fracN;
@@ -80,7 +80,7 @@ void AV2026_setFrequency(float frec, uint32_t bb_sym)
         tuner_initial = 1;
     }
 		
-		frec=frec-FREQ_OFFSET;//calculate IF offset to act as IF, not as zero IF
+	frec=frec-FREQ_OFFSET;//calculate IF offset to act as IF, not as zero IF
     freq_khz = (uint32_t)(frec * 1000);//convert float to khz
     fracN = (freq_khz + AV2026_XTAL / 2) / AV2026_XTAL;
     if (fracN > 0xFF) fracN = 0xFF;
@@ -128,3 +128,4 @@ void AV2026_setFrequency(float frec, uint32_t bb_sym)
         AV2026_write_regs(12, reg + 12, 1);
     }
 }
+
