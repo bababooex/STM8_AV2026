@@ -53,7 +53,7 @@ void AV2026_setFrequency(float frec, uint32_t bb_sym)
         delay_ms(1);
 
         reg_start = 12;
-				AV2026_write_regs(reg_start, reg + 12, 1);
+		AV2026_write_regs(reg_start, reg + 12, 1);
 
         delay_ms(100);
 				
@@ -128,5 +128,6 @@ void AV2026_setFrequency(float frec, uint32_t bb_sym)
         AV2026_write_regs(12, reg + 12, 1);
     }
 }
+
 
 
