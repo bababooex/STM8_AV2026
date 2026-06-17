@@ -10,6 +10,7 @@
 #define FREQ_OFFSET 44 
 // very high bandwidth to avoid filtering issue at IF (doesnt matter, pushing BW to its limits)
 #define AV2026_tune(frec) AV2026_setFrequency(frec, 100000)
+//use this ↑↑↑ in your code, should work right away
 //init registers for sat tuner - total 42
 static const uint8_t initRegs[] = {
         0x38,0x00,0x00,0x50,0x1F,0xA3,0xFD,0x58,
